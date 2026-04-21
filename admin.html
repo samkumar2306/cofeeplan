@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+    }
+
+    .header {
+      background: #343a40;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 22px;
+    }
+
+    .container {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background: #1e7e34;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    /* Bottom buttons */
+    .nav-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .nav-buttons button {
+      width: auto;
+      margin-left: 10px;
+      background: #007BFF;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">Admin Panel</div>
+
+  <div class="container">
+
+    <!-- Add Reminder -->
+    <div class="card">
+      <h3>Add Reminder</h3>
+      <input type="text" id="reminderInput" placeholder="Enter reminder">
+      <button onclick="addReminder()">Add</button>
+      <ul id="reminderList"></ul>
+    </div>
+
+    <!-- Upload Worksheet -->
+    <div class="card">
+      <h3>Upload Worksheet</h3>
+      <input type="file" id="fileInput">
+      <button onclick="uploadFile()">Upload</button>
+      <ul id="fileList"></ul>
+    </div>
+
+    <!-- Send Notification -->
+    <div class="card">
+      <h3>Send Notification</h3>
+      <textarea id="notificationInput" placeholder="Enter notification"></textarea>
+      <button onclick="sendNotification()">Send</button>
+      <ul id="notificationList"></ul>
+    </div>
+
+  </div>
+
+  <!-- Navigation buttons -->
+  <div class="nav-buttons">
+    <button onclick="goBack()">Back</button>
+    <button onclick="goNext()">Next</button>
+  </div>
+
+  <script>
+    function addReminder() {
+      let input = document.getElementById("reminderInput");
+      let list = document.getElementById("reminderList");
+
+      if (input.value.trim() !== "") {
+        let li = document.createElement("li");
+        li.textContent = input.value;
+        list.appendChild(li);
+        input.value = "";
+      }
+    }
+
+    function uploadFile() {
+      let fileInput = document.getElementById("fileInput");
+      let list = document.getElementById("fileList");
+
+      if (fileInput.files.length > 0) {
+        let li = document.createElement("li");
+        li.textContent = fileInput.files[0].name;
+        list.appendChild(li);
+      }
+    }
+
+    function sendNotification() {
+      let input = document.getElementById("notificationInput");
+      let list = document.getElementById("notificationList");
+
+      if (input.value.trim() !== "") {
+        let li = document.createElement("li");
+        li.textContent = input.value;
+        list.appendChild(li);
+        input.value = "";
+      }
+    }
+
+    function goNext() {
+      window.location.href = "dashboard.html"; // example
+    }
+
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+</body>
+</html>

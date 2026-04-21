@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      width: 300px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .nav-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .nav-buttons button {
+      width: auto;
+      margin-left: 10px;
+      background: #007BFF;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+
+    <form onsubmit="loginUser(event)">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <div class="nav-buttons">
+  <button onclick="goBack()">Back</button>
+  <button onclick="goNext()">Next</button>
+</div>
+
+  <script>
+    function loginUser(event) {
+      event.preventDefault();
+      alert("Login button clicked!");
+      // You can redirect like this:
+      // window.location.href = "home.html";
+    }
+
+    function goNext() {
+      window.location.href = "register.html"; // change to your next page
+    }
+
+    function goBack() {
+      window.history.back(); // goes to previous page
+    }
+
+  </script>
+
+</body>
+</html>

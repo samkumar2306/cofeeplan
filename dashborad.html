@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+    }
+
+    /* Header */
+    .header {
+      background: #007BFF;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 22px;
+    }
+
+    /* Grid layout */
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Cards */
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* Bottom buttons */
+    .nav-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .nav-buttons button {
+      padding: 10px 15px;
+      margin-left: 10px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .nav-buttons button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">Dashboard</div>
+
+  <div class="dashboard">
+
+    <!-- Reminders -->
+    <div class="card">
+      <h3>Reminders</h3>
+      <ul>
+        <li>Math homework due tomorrow</li>
+        <li>Science project submission on Friday</li>
+        <li>Pay school fees before 25th</li>
+      </ul>
+    </div>
+
+    <!-- Notifications -->
+    <div class="card">
+      <h3>Notifications</h3>
+      <ul>
+        <li>New message from teacher</li>
+        <li>Exam timetable released</li>
+        <li>Holiday announced on Monday</li>
+      </ul>
+    </div>
+
+    <!-- Attendance -->
+    <div class="card">
+      <h3>Attendance</h3>
+      <ul>
+        <li>Present: 85%</li>
+        <li>Absent: 10%</li>
+        <li>Late: 5%</li>
+      </ul>
+    </div>
+
+    <!-- Updates -->
+    <div class="card">
+      <h3>Updates</h3>
+      <ul>
+        <li>New syllabus uploaded</li>
+        <li>Parent meeting scheduled</li>
+        <li>Sports day next week</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Navigation buttons -->
+  <div class="nav-buttons">
+    <button onclick="goBack()">Back</button>
+    <button onclick="goNext()">Next</button>
+  </div>
+
+  <script>
+    function goNext() {
+      window.location.href = "admin.html"; // change if needed
+    }
+
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+</body>
+</html>

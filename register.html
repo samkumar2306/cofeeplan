@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #43e97b, #38f9d7);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .register-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      width: 320px;
+      text-align: center;
+    }
+
+    .register-container h2 {
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1e7e34;
+    }
+
+    /* Bottom right navigation buttons */
+    .nav-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .nav-buttons button {
+      width: auto;
+      margin-left: 10px;
+      background: #007BFF;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="register-container">
+    <h2>Register</h2>
+
+    <form onsubmit="registerUser(event)">
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+
+      <select required>
+        <option value="">Select Role</option>
+        <option value="student">Student</option>
+        <option value="parent">Parent</option>
+      </select>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <!-- Navigation buttons -->
+  <div class="nav-buttons">
+    <button onclick="goBack()">Back</button>
+    <button onclick="goNext()">Next</button>
+  </div>
+
+  <script>
+    function registerUser(event) {
+      event.preventDefault();
+      alert("Registered successfully!");
+      // Example redirect:
+      // window.location.href = "login.html";
+    }
+
+    function goNext() {
+      window.location.href = "dashborad.html"; // change as needed
+    }
+
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+</body>
+</html>
